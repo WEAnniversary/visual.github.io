@@ -1,0 +1,107 @@
+body {
+  background: #44baa8;
+}
+
+.text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: yellow;
+  font-size: 300px;
+  filter: url(#gooey);
+}
+.text::before, .text::after {
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  animation-duration: 6s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  filter: blur(9px);
+}
+.text::before {
+  content: "You";
+  animation-name: items-odd;
+}
+.text::after {
+  content: "EVA!";
+  animation-name: items-even;
+  animation-delay: 1.5s;
+}
+
+@keyframes items-odd {
+  16.6666666667% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  41.6666666667% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  66.6666666667% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  91.6666666667% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+  0% {
+    content: "I";
+  }
+  49.9999% {
+    content: "I";
+  }
+  50% {
+    content: "You";
+  }
+  99.9999% {
+    content: "You";
+  }
+}
+@keyframes items-even {
+  16.6666666667% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  41.6666666667% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  66.6666666667% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  91.6666666667% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+  0% {
+    content: "Love";
+  }
+  49.9999% {
+    content: "Love";
+  }
+  50% {
+    content: "EVA!";
+  }
+  99.9999% {
+    content: "EVA!";
+  }
+}
